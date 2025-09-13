@@ -1,12 +1,7 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
 
-# Redirects for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [build.environment]
   NODE_VERSION = "16" # Matches your current Node.js version
