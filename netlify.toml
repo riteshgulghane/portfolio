@@ -2,7 +2,6 @@
   command = "npm run build"
   publish = ".next"
 
-
 [build.environment]
   NODE_VERSION = "16" # Matches your current Node.js version
   NPM_VERSION = "8.19.4"

@@ -74,3 +74,12 @@ Thumbs.db
 
 # Typescript
 *.tsbuildinfo
+
+
+# Playwright
+playwright-report
+playwright-report.zip
+
+
+# Test results
+test-results

@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import { ABOUT, META } from '../constants'
+import React, { useState } from "react";
+import Head from "next/head";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { ABOUT, META } from "../constants";
 
 // Skills data is now provided from constants
 
 // Experience data is now provided from constants
 
 export default function About() {
-  const [expandedExperience, setExpandedExperience] = useState<{ [key: number]: boolean }>({});
+  const [expandedExperience, setExpandedExperience] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   const toggleExperience = (index: number) => {
-    setExpandedExperience(prev => ({
+    setExpandedExperience((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
@@ -51,7 +53,10 @@ export default function About() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {ABOUT.SKILLS.CATEGORIES.map((skillGroup, index) => (
-                  <div key={index} className={`bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg card-hover animate-scale-in animation-delay-${300 + (index * 200)}`}>
+                  <div
+                    key={index}
+                    className={`bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg card-hover animate-scale-in animation-delay-${300 + index * 200}`}
+                  >
                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 text-center">
                       {skillGroup.CATEGORY}
                     </h3>
@@ -79,7 +84,10 @@ export default function About() {
                 {ABOUT.EXPERIENCE.JOBS.map((job, index) => {
                   const isExpanded = expandedExperience[index];
                   return (
-                    <div key={index} className={`relative pl-8 pb-8 border-l-2 border-blue-400 last:border-l-0 last:pb-0 animate-slide-in-left animation-delay-${400 + (index * 300)}`}>
+                    <div
+                      key={index}
+                      className={`relative pl-8 pb-8 border-l-2 border-blue-400 last:border-l-0 last:pb-0 animate-slide-in-left animation-delay-${400 + index * 300}`}
+                    >
                       <div className="absolute w-4 h-4 bg-blue-400 rounded-full -left-2 top-0"></div>
                       <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg ml-4 card-hover">
                         <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-1">
@@ -88,26 +96,36 @@ export default function About() {
                         <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">
                           {job.COMPANY} • {job.DURATION}
                         </p>
-                        
+
                         {/* Summary or Full Details */}
-                        <div className="text-gray-600 dark:text-gray-300 space-y-2 overflow-hidden transition-all duration-500 ease-in-out" 
-                            style={{ maxHeight: isExpanded ? '1000px' : '80px' }}
+                        <div
+                          className="text-gray-600 dark:text-gray-300 space-y-2 overflow-hidden transition-all duration-500 ease-in-out"
+                          style={{ maxHeight: isExpanded ? "1000px" : "80px" }}
                         >
                           {isExpanded ? (
                             <ul className="space-y-2">
                               {job.DETAILS.map((detail, detailIndex) => (
-                                <li key={detailIndex} className="flex items-start" 
-                                    style={{ animationDelay: `${detailIndex * 100}ms` }}>
-                                  <span className="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
+                                <li
+                                  key={detailIndex}
+                                  className="flex items-start"
+                                  style={{
+                                    animationDelay: `${detailIndex * 100}ms`,
+                                  }}
+                                >
+                                  <span className="text-blue-500 mr-2 mt-1 flex-shrink-0">
+                                    •
+                                  </span>
                                   <span>{detail}</span>
                                 </li>
                               ))}
                             </ul>
                           ) : (
-                            <p className="transition-opacity duration-300 ease-in-out">{job.SUMMARY}</p>
+                            <p className="transition-opacity duration-300 ease-in-out">
+                              {job.SUMMARY}
+                            </p>
                           )}
                         </div>
-                        
+
                         {/* Show More/Less Button */}
                         <button
                           onClick={() => toggleExperience(index)}
@@ -116,15 +134,35 @@ export default function About() {
                           {isExpanded ? (
                             <>
                               Show Less
-                              <svg className="w-4 h-4 ml-1 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              <svg
+                                className="w-4 h-4 ml-1 transform rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
                               </svg>
                             </>
                           ) : (
                             <>
                               Show More
-                              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              <svg
+                                className="w-4 h-4 ml-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
                               </svg>
                             </>
                           )}
@@ -147,7 +185,7 @@ export default function About() {
                     Bachelor of Engineering (Computer Science)
                   </h3>
                   <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
-                  Government College of Engineering, Karad
+                    Government College of Engineering, Karad
                   </p>
                   <p className="text-gray-600 dark:text-gray-300">
                     2015 - 2019 • Grade: 8.2/10 CGPA
@@ -158,25 +196,25 @@ export default function About() {
                     JEE Preparation Super 30
                   </h3>
                   <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
-                    Abhayanand Kumar's Super 30 (CSRL)
+                    Abhayanand Kumar&apos;s Super 30 (CSRL)
                   </p>
                   <p className="text-gray-600 dark:text-gray-300">
                     2014 - 2015 • Scored 140 marks in JEE Mains
                   </p>
                 </div>
-                
+
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg card-hover animate-scale-in animation-delay-600">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                     Higher Secondary (12th)
                   </h3>
                   <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
-                  Jawahar Navodaya Vidyalaya, Wardha
+                    Jawahar Navodaya Vidyalaya, Wardha
                   </p>
                   <p className="text-gray-600 dark:text-gray-300">
                     2012 - 2014 • 83.60%
                   </p>
                 </div>
-                
+
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg card-hover animate-scale-in animation-delay-700">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                     Secondary (10th)
@@ -199,18 +237,31 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center card-hover animate-scale-in animation-delay-300">
                   <div className="text-3xl mb-3">🚀</div>
-                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Biased Towards Action Award</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">PubMatic - For proactive solutions improving delivery speed</p>
+                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">
+                    Biased Towards Action Award
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    PubMatic - For proactive solutions improving delivery speed
+                  </p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center card-hover animate-scale-in animation-delay-500">
                   <div className="text-3xl mb-3">💡</div>
-                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Innovation Award</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">For building a navigation system reducing costs and enhancing UX</p>
+                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">
+                    Innovation Award
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    For building a navigation system reducing costs and
+                    enhancing UX
+                  </p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center card-hover animate-scale-in animation-delay-700">
                   <div className="text-3xl mb-3">🏆</div>
-                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">AIR 44 - ABU Robocon 2017</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">Secured 47th position in a global robotics competition</p>
+                  <h3 className="font-semibold text-gray-800 dark:text-white mb-2">
+                    AIR 44 - ABU Robocon 2017
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    Secured 47th position in a global robotics competition
+                  </p>
                 </div>
               </div>
             </div>
@@ -237,5 +288,5 @@ export default function About() {
         <Footer />
       </div>
     </>
-  )
+  );
 }

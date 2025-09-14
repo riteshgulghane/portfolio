@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact - Ritesh's Portfolio</title>
+        <title>Contact - Ritesh&apos;s Portfolio</title>
         <meta
           name="description"
           content="Get in touch with Ritesh Gulghane for collaboration opportunities"
@@ -22,8 +22,8 @@ export default function Contact() {
                 Get In Touch
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                I'm always interested in new opportunities and collaborations.
-                Let's connect!
+                I&apos;m always interested in new opportunities and
+                collaborations. Let&apos;s connect!
               </p>
             </div>
 
@@ -32,11 +32,11 @@ export default function Contact() {
               <div className="space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-                    Let's Connect
+                    Let&apos;s Connect
                   </h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-8">
-                    I'm currently open to new opportunities and would love to
-                    hear from you. Whether you have a project in mind or just
+                    I&apos;m currently open to new opportunities and would love
+                    to hear from you. Whether you have a project in mind or just
                     want to chat about technology, feel free to reach out.
                   </p>
                 </div>
