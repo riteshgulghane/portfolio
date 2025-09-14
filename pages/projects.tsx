@@ -37,8 +37,8 @@ const projects = [
       "Real-time Updates",
       "Agile",
     ],
-    github: "https://github.com/riteshgulghane",
-    demo: "https://planning-poker-demo.com",
+    github: "https://github.com/riteshgulghane/planning-poker",
+    demo: "https://planning-poker-l54q.onrender.com",
     image: "/planning-poker.png",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
       "SEO",
     ],
     github: "https://github.com/riteshgulghane/video-cropper",
-    demo: "https://riteshgulghane.dev",
+    demo: "https://video-cropper.netlify.app",
     image: "/video-cropper.png",
   },
 ];
