@@ -43,16 +43,14 @@ const projects = [
   },
   {
     id: 3,
-    title: "Personal Portfolio",
+    title: "Video Cropper",
     description:
-      "Modern portfolio website showcasing projects, blogs, and professional profile. Built with Next.js and deployed on Vercel for optimal performance.",
+      "Modern video cropper built with Angular and deployed on Netlify for optimal performance.",
     technologies: [
-      "Next.js",
-      "Tailwind CSS",
+      "Angular",
       "TypeScript",
-      "Vercel",
+      "Netlify",
       "Responsive Design",
-      "SEO",
     ],
     github: "https://github.com/riteshgulghane/video-cropper",
     demo: "https://video-cropper.netlify.app",
